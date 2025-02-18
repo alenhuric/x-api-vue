@@ -99,7 +99,7 @@ export default defineComponent({
 
     const fetchTweets = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/tweets");
+        const response = await axios.get("https://api.alenhuric.com");
         tweets.value = response.data;
       } catch (err: any) {
         error.value = err.response?.data?.error || "Failed to fetch tweets";
