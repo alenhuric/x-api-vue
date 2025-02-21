@@ -69,19 +69,25 @@
         </p>
       </div>
 
-      <v-btn
-        class="laravel-btn"
-        fab
-        dark
-        :color="laravelRed"
-        @click="goToLaravel"
-        :width="$vuetify.display.smAndDown ? 50 : 60"
-        :height="$vuetify.display.smAndDown ? 50 : 60"
-      >
-        <v-icon :size="$vuetify.display.smAndDown ? 28 : 36"
-          >mdi-laravel</v-icon
-        >
-      </v-btn>
+      <v-tooltip>
+        <template #activator="{ props }">
+          <v-btn
+            class="laravel-btn"
+            fab
+            dark
+            :color="laravelRed"
+            @click="goToLaravel"
+            :width="$vuetify.display.smAndDown ? 50 : 60"
+            :height="$vuetify.display.smAndDown ? 50 : 60"
+            v-bind="props"
+          >
+            <v-icon :size="$vuetify.display.smAndDown ? 28 : 36"
+              >mdi-laravel</v-icon
+            >
+          </v-btn>
+        </template>
+        <span>Go to the Laravel API</span>
+      </v-tooltip>
     </v-container>
   </v-app>
 </template>
